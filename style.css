@@ -1,0 +1,280 @@
+*  {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--base-color);
+    /*padrão rgba:#A09038*/
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    /* colors */
+    --hue: 50;
+    /* HSL color mode */
+    --base-color: hsl(var(--hue) 48% 42%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color-alt: hsl(var(--hue) 57% 53%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --body-color: hsl(0 0% 98%);
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    margin-bottom: 45px;
+}
+header ul{
+    display: flex;
+}
+header img.profilepic{
+    width: 150px;
+    border: solid;
+    border-radius: 25px;
+}
+ul{
+    list-style: none;
+    font-style: italic;
+    font-size: 17px;
+    
+}
+ul li i{
+    font-size: 50px;
+}
+a{
+    text-decoration: none;
+    font-weight: 700;
+}
+header ul li{
+    background: var(--title-color);
+    margin: 10px;
+    transition: .5s;
+    border-radius: 10px;
+    padding: 5px;
+}
+li:hover{
+    background: var(--base-color-second);
+    transform: translateY(-8px);
+    padding: 7px;
+}
+body{
+    height: 100vh;
+    background: url(./pexels-instawalli-169789.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.container{
+    text-align: center;
+}
+.container .name h1{
+    font-size: 60px;
+}
+.container .name h5{
+    font-size: 25px;
+}
+.arrow i{
+    font-size: 35px;
+    cursor: pointer;
+    animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink{
+    to {
+        visibility: hidden;
+    }
+}
+.rotate{
+    transform: rotate(180deg);
+    transition: .4s;
+}
+#animation{
+    transition: 300ms;
+}
+.active{
+    display: inline-flex !important;
+}
+#about p{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: .5s;
+}
+.grid .card:hover{
+    transform: translateY(-8px);
+}
+
+.card{
+    border: solid;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 15px;
+    box-shadow: 1px 1px 10px 1px;
+    transition: .5s;
+    background: var(--text-color-light);
+}
+.card:hover{
+    box-shadow: 0px 0px 0px 0px;
+}
+.card a{
+    text-decoration: none;
+    color: var(--base-color);
+    transition: .5s;
+}
+.card a:hover{
+    text-decoration: underline;
+    color: var(--title-color);
+}
+
+i{
+    font-size: 30pt;
+}
+.form{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 15px;
+}
+.form input{
+    width: 50%;
+    border-radius: 5px 0px 0px 5px;
+    padding: 5px;
+    border: none;
+}
+.form button{
+    padding: 5px 10px;
+    width: 15%;
+    background: linear-gradient(to right, var(--base-color) 50%, var(--base-color-second) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .35s ease-out;
+    border: none;
+    box-shadow: .5px .5px 5px .5px;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -5px;
+
+}
+.form button:hover{
+    color: var(--base-color-second); 
+    box-shadow: 0px 0px 0px 0px;
+    cursor: pointer;
+    background-position: left bottom;
+   
+}
+.form p{
+    font-size: 24px;
+}
+footer{
+    display: grid;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+footer p{
+    text-align: center;
+}
+footer a{
+    color: var(--base-color);
+    text-decoration: none;
+    transition: .5s;
+}
+footer a:hover{
+    color: var(--base-color-second);
+    text-decoration: underline;
+}
+/*=================MEDIA QUERIES=======================*/
+@media (max-width: 300px){  
+    .container .name h1{
+        font-size: 20px;
+    }
+    .container .name h5{
+        font-size: 12px;
+    }
+    .about p{
+        max-width: 100%;
+        text-align: justify;
+    }
+    ul li i{
+        font-size: 15px;
+    }
+    header img.profilepic{
+        width: 25px;
+        border: solid;
+        border-radius: 25px;
+    }
+    .form{
+        width: 100%;
+        font-size: 7px;
+    }
+    .form p{
+        font-size: 7px;
+    }
+}
+@media (max-width: 480px){  
+    .container .name h1{
+        font-size: 30px;
+    }
+    .container .name h5{
+        font-size: 15px;
+    }
+    .about p{
+        max-width: 80%;
+        text-align: justify;
+    }
+    ul li i{
+        font-size: 30px;
+    }
+    header img.profilepic{
+        width: 100px;
+        border: solid;
+        border-radius: 25px;
+    }
+    .form input{
+        width: 40%;
+        font-size: 10px;
+    }
+    .form button{
+        width: 15%;
+        font-size: 10px;
+    }
+    .form p{
+        font-size: 16px;
+    }
+}
+@media (min-width: 545px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+}
+
+/* medium devices: 767 > */
+@media (min-width: 767px){
+    .container .name h1{
+        font-size: 50px;
+    }
+    .container .name h5{
+        font-size: 25px;
+    }
+    .form{
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 30px;
+            font-size: 7px;
+        }
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    }
+/* large devices: 992 > */
+@media only screen and (max-width: 992px){
+    .form{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+        font-size: 7px;
+    }
+}  
+
